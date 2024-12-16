@@ -1,0 +1,87 @@
+import random
+
+def rock_paper_scissors():
+    
+# Varible definition and getting an input from the player and the cpu.
+    rpc_game = ['rock', 'paper', 'scissors']
+    
+    player_choice = int(input('''What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors.\n'''))
+    
+    cpu_choice = random.randint(0,2)
+
+    cpu_rpc = rpc_game[cpu_choice]
+
+# Adding in the visual element to the game for both player and cpu.
+    if player_choice == 0:
+        print('\nYou chose:\n',rpc_game[0],'\n','''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___) \n''')
+    
+    elif player_choice == 1:
+        print('You chose:\n', rpc_game[1],'\n', '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)\n ''')
+        
+    else:
+        player_choice == 2
+        print('You chose:\n', rpc_game[2],'\n', ''' 
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___) \n''')
+    
+    print('The computer chose:\n', cpu_rpc)
+    
+
+    if cpu_rpc == 'rock':
+        print('''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___) \n''')
+        
+    elif cpu_rpc == 'paper':
+        print('''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)\n ''')
+
+    elif cpu_rpc == 'scissors':
+        print(''' 
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___) \n''')
+
+# Deciding a winner.
+    if cpu_choice == player_choice:
+        print ('YOU HAVE TIED!')
+    elif cpu_choice == 0 and player_choice == 1:
+        print('\n\t' 'Paper covers Rock! YOU WIN!')
+    elif cpu_choice == 1 and player_choice == 2:
+        print('\n\t' 'Scissors cuts Paper! YOU WIN!')
+    elif cpu_choice == 2 and player_choice == 0:
+        print('\n\t' 'Rock breaks Scissors! YOU WIN!')
+    else:
+        print('\n\t' 'YOU LOSE! WHAT A LOSER!')
+    
+
+
+rock_paper_scissors()
